@@ -12,11 +12,11 @@ class TimeClockEvent(models.Model):
 class Event(models.Model):
     dte = models.ForeignKey(DateTimeEvent)
     owner = models.ForeignKey(User)
-    calendar = modelsForegnKey(Cal)
+    calendar = modelsForegnKey(Calendar)
     title = models.CharField(max_length = 50, blank = False)
     description = models.TextField(blank = True)
 
-class Cal(models.Model):
+class Calendar(models.Model):
     owner = models.ForeignKey(User)
     slug = models.SlugField()
     title = models.CharField(max_length = 50, blank = False)

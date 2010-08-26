@@ -1,17 +1,27 @@
 from django.conf.urls.defaults import *
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^worktk/', include('worktk.foo.urls')),
+    # Counter app
+    (r'^(ctr|counter)/', include('worktk.counter.counter_urls')),
 
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # Event app
+    (r'^(c|cal|calendar)/', include('worktk.event.calendar_urls')),
+    (r'^(tce|timeclock)/', include('worktk.event.timeclock_urls')),
+    (r'^(e|evt|event)/', include('worktk.event.event_urls')),
 
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    # Project app
+    (r'^(o|org|organization)/', include('worktk.project.organization_urls')),
+    (r'^(p|prj|project)/', include('worktk.project.project_urls')), #includes component & release
+
+    # Task app
+    (r'^(t|task)/', include('worktk.task.task_urls')),
+
+    # User app
+    (r'^(u|user)/', include('worktk.usermgmt.user_urls')),
+    (r'^accounts/', include('worktk.usermgmt.account_urls')),
+
+    (r'^admin/', include(admin.site.urls)),
 )
