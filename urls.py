@@ -19,6 +19,10 @@ urlpatterns = patterns('',
     # Task app
     (r'^(t|task)/', include('worktk.task.task_urls')),
 
+    # Support app
+    (r'^(s|sup|support)/', include('worktk.support.support_urls')),
+    (r'^kb/'), include('worktk.support.kb_urls')),
+
     # User app
     (r'^(u|user)/', include('worktk.usermgmt.user_urls')),
     (r'^accounts/', include('worktk.usermgmt.account_urls')),

@@ -1,16 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import User
+from worktk.usermgmt.models import Employee
 from worktk.event.models import DateTimeEvent
 
 class Organization(models.Model):
-    members = models.ManyToManyField(User)
+    members = models.ManyToManyField(Employee)
     slug = models.SlugField()
     title = models.CharField(max_length = 100)
     description = models.TextField(blank = True)
 
 class Project(models.Model):
-    lead = models.ForeignKey(User)
-    members = models.ManyToManyField(User)
+    lead = models.ForeignKey(Employee)
+    members = models.ManyToManyField(Employee)
     slug = models.SlugField()
     title = models.CharField(max_length = 100)
 
