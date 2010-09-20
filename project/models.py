@@ -1,9 +1,21 @@
 from django.db import models
+from django.contrib.auth.models import Group
 from worktk.usermgmt.models import Employee
 from worktk.event.models import DateTimeEvent
 
+class OrganizationMember(models.Model):
+    organization = models.ForeignKey('Organization')
+    member = models.ForeignKey(Employee)
+    role = models.ManyToManyField('OrganizationRole')
+
+class OrganizationRole(models.Model):
+    organization = models.ForeignKey('Organization')
+    title = models.CharField(max_length = 50)
+    description = models.TextField(blank = True)
+
 class Organization(models.Model):
-    members = models.ManyToManyField(Employee)
+    members = models.ManyToManyField(OrganizationMember)
+    board = models.ForeignKey(OrganizationRole)
     slug = models.SlugField()
     title = models.CharField(max_length = 100)
     description = models.TextField(blank = True)

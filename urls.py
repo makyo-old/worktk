@@ -7,6 +7,9 @@ urlpatterns = patterns('',
     # Counter app
     (r'^(ctr|counter)/', include('worktk.counter.counter_urls')),
 
+    # Decision app
+    (r'^(d|dcn|decision)/', include('worktk.decision.decision_urls')),
+
     # Event app
     (r'^(c|cal|calendar)/', include('worktk.event.calendar_urls')),
     (r'^(tce|timeclock)/', include('worktk.event.timeclock_urls')),
