@@ -21,7 +21,7 @@ class Ticket(models.Model):
     status = models.IntegerField(choices = ticket_statuses)
     description = models.TextField()
     resolution = models.TextField()
-    task = models.ForeignKey(Task)
+    task = models.ForeignKey(Task, null = True)
     #tags = TagField()
     kb = models.ForeignKey(KBEntry)
 

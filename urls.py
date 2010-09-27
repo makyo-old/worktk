@@ -30,5 +30,8 @@ urlpatterns = patterns('',
     (r'^(u|user)/', include('worktk.usermgmt.user_urls')),
     (r'^accounts/', include('worktk.usermgmt.account_urls')),
 
+    # Wiki app
+    (r'^(w|wiki)/', include('worktk.wiki.wiki_urls')),
+
     (r'^admin/', include(admin.site.urls)),
 )
