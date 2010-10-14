@@ -24,3 +24,12 @@ decision_types = (
         (2, 'Option With Write-in'),
         (3, 'Write-in')
         )
+
+wiki_page_permissions = (
+        (0, 'User only'),
+        (1, 'Project only'),
+        (2, 'Organization only'),
+        (3, 'Logged in users only'),
+        (4, 'Everyone')
+        )
+        )
