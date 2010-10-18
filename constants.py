@@ -32,4 +32,3 @@ wiki_page_permissions = (
         (3, 'Logged in users only'),
         (4, 'Everyone')
         )
-        )
